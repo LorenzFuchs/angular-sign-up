@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "angular-sign-up-c8355": {
+      "hosting": {
+        "angular-sign-up": [
+          "angular-sign-up-c8355"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "angular-sign-up-c8355"
+  }
+}
