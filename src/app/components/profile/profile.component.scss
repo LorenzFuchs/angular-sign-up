@@ -17,3 +17,12 @@
 .profile-image {
     position: relative;
 }
+
+.form-container {
+    max-width: 400px;
+}
+
+.row {
+    display: flex;
+    gap: 16px;
+}

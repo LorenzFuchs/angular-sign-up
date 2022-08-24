@@ -17,10 +17,8 @@ export class AuthenticationService {
     return from(signInWithEmailAndPassword(this.auth, username, password));
   }
 
-  signUP(name: string, email: string, password: string) {
-    return from(createUserWithEmailAndPassword(this.auth, email, password)).pipe(
-      switchMap(({user})=> updateProfile(user, {displayName: name}))
-    );
+  signUP(email: string, password: string) {
+    return from(createUserWithEmailAndPassword(this.auth, email, password));
   }
   
 

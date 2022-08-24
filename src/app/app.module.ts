@@ -6,7 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
-
+import { Firestore } from '@angular/fire/firestore';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
@@ -21,8 +21,11 @@ import { provideAuth,getAuth } from '@angular/fire/auth';
 import { HotToastModule } from '@ngneat/hot-toast';
 import {MatMenuModule} from '@angular/material/menu';
 import {provideStorage, getStorage} from '@angular/fire/storage';
+import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { TestComponent } from './test/test.component';
 import { ProfileComponent } from './components/profile/profile.component';
+
+
 
 
 
@@ -54,7 +57,8 @@ import { ProfileComponent } from './components/profile/profile.component';
     ReactiveFormsModule,
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
-    provideStorage(() => getStorage()),
+    provideFirestore(() => getFirestore()),
+    provideStorage(()=>getStorage()),
     HotToastModule.forRoot()
   ],
   schemas: [
