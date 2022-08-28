@@ -1,8 +1,6 @@
 import {docData, Firestore} from '@angular/fire/firestore';
 import { Injectable } from '@angular/core';
 import { user } from '@angular/fire/auth';
-import { getFirestore } from "firebase/firestore";
-
 import { doc, setDoc, updateDoc } from '@firebase/firestore';
 import { from, Observable, of, switchMap } from 'rxjs';
 import { ProfileUser } from '../models/user.profile';
