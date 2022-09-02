@@ -28,15 +28,19 @@ export class SignUpComponent implements OnInit {
   name: new FormControl('', Validators.required), 
   email : new FormControl('', [Validators.email, Validators.required]), 
   password: new FormControl('', Validators.required),
-  confirmPassword: new FormControl ('', Validators.required)
+  confirmPassword: new FormControl ('', Validators.required),
+  tasks:<any> new FormControl([]),
 }, {validators: passwordsMatchValidator()})
   constructor(private authService: AuthenticationService, private toast: HotToastService, private router: Router, private usersService: UsersService) { }
 
   ngOnInit(): void {
+
   }
   get name() {
     return this.signUpForm.get('name');
   }
+
+ 
 
   get email() {
     return this.signUpForm.get('email');
@@ -52,10 +56,10 @@ export class SignUpComponent implements OnInit {
 
   submit() {
     if(!this.signUpForm.valid) return;
-    const {name, email, password} = this.signUpForm.value;
+    const {name, email, password, tasks} = this.signUpForm.value;
     this.authService.signUP(email, password).pipe(
       switchMap(({ user: { uid } }) =>
-          this.usersService.addUser({ uid, email, displayName: name })
+          this.usersService.addUser({ uid, email, displayName: name, tasks})
         ),
       this.toast.observe({
         success: 'Congrats!You are all signed up',

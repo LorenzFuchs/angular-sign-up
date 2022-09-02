@@ -1,0 +1,23 @@
+.material-icons {
+    font-size: 48px !important ;
+}
+
+mat-card {
+    width: 300px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.mat-icon-button {
+    display: flex;
+    align-items: center;
+    
+    cursor: pointer;
+
+    
+}
+.edit-icon {
+    font-size: 20px !important;
+}

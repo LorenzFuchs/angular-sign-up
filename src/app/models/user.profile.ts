@@ -7,4 +7,8 @@ export interface ProfileUser {
     phone?: string;
     address?: string;
     photoURL?: string;
+    tasks?: Array<String>;
+
   }
+
+  

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialogRef } from '@angular/material/dialog';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-landing',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LandingComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router, public dialogRef: MatDialogRef<LandingComponent>) { }
 
   ngOnInit(): void {
   }
+login() {
+  this.router.navigate(['/login']);
+  this.dialogRef.close();
 
+}
 }

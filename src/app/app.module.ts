@@ -6,7 +6,6 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import { Firestore } from '@angular/fire/firestore';
 import {MatButtonModule} from '@angular/material/button';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
@@ -24,6 +23,14 @@ import {provideStorage, getStorage} from '@angular/fire/storage';
 import { provideFirestore,getFirestore } from '@angular/fire/firestore';
 import { TestComponent } from './test/test.component';
 import { ProfileComponent } from './components/profile/profile.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { FormsModule } from '@angular/forms';
+import { AddNoticeComponent } from './components/add-notice/add-notice.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import {MatCardModule} from '@angular/material/card';
+import { EditNoticeComponent } from './components/edit-notice/edit-notice.component';
+
 
 
 
@@ -41,20 +48,27 @@ import { ProfileComponent } from './components/profile/profile.component';
     SignUpComponent,
     HomeComponent,
     TestComponent,
-    ProfileComponent
+    ProfileComponent,
+    AddNoticeComponent,
+    EditNoticeComponent
   ],
   
   imports: [
     BrowserModule,
     MatIconModule,
     AppRoutingModule,
+    FormsModule,
     BrowserAnimationsModule,
     MatToolbarModule,
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDialogModule,
+    MatCardModule,
     MatMenuModule,
+    AngularFirestoreModule,
     ReactiveFormsModule,
+    AngularFireModule.initializeApp(environment.firebase),
     provideFirebaseApp(() => initializeApp(environment.firebase)),
     provideAuth(() => getAuth()),
     provideFirestore(() => getFirestore()),

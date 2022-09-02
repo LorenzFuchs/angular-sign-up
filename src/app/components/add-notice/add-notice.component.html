@@ -1,0 +1,25 @@
+
+   <form [formGroup]="profileform" *ngIf="user$ | async as user" (ngSubmit)="saveTask(user)">
+    <h1 mat-dialog-title>Add a new notice</h1>
+    <div mat-dialog-content>
+      
+      <mat-form-field  appearance="fill">
+        <mat-label>Task</mat-label>
+        <input  formControlName="task" minlength="4"  matInput  type="text"   name="something">
+        <mat-error *ngIf="task?.errors?.['required']">
+          Task is required
+      </mat-error>
+        
+      </mat-form-field>
+      
+    </div>
+    <div mat-dialog-actions>
+      <button type="button" mat-button (click)="close()" >Close</button>
+      <button type="submit" mat-button >Save</button>  
+    </div>
+   </form>
+  
+
+
+
+
